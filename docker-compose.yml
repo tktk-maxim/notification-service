@@ -1,0 +1,18 @@
+
+services:
+  notification-server:
+    build: ./
+    container_name: notification-server
+    working_dir: /src
+    command: >
+      sh -c "python main.py"
+    networks:
+      - my-network
+    env_file:
+      - .env
+
+
+networks:
+  my-network:
+    driver: bridge
+    external: true

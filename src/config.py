@@ -7,8 +7,6 @@ class Settings(BaseSettings):
     user_service_host: str
     user_service_port: str
 
-    run_test: bool
-
     task_service_host: str
     task_service_port: str
 
