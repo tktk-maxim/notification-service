@@ -59,7 +59,8 @@ async def checking_tasks_for_time_expiration_and_sending_msg():
                 raise HTTPException(status_code=response.status_code, detail=response.text)
             employee = response.json()
 
-            if employee["employee"]["chat_id"] is not None:
+            print(employee["employee"]["chat_id"])
+            if employee["employee"]["chat_id"] != 0:
                 await send_message(employee["employee"]["chat_id"],
                                    f"Please note!\n"
                                    f"{task["name"]}\n"
